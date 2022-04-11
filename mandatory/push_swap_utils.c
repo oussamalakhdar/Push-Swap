@@ -6,7 +6,7 @@
 /*   By: olakhdar <olakhdar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 16:47:19 by olakhdar          #+#    #+#             */
-/*   Updated: 2022/04/08 18:23:47 by olakhdar         ###   ########.fr       */
+/*   Updated: 2022/04/10 17:11:45 by olakhdar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,22 @@ int	getindex(int *tab, int nb, int argc)
 	return (-1);
 }
 
-int	ft_isalpha(char *s)
+int	ft_ischar(char *s)
 {
 	int	i;
+	int	j;
 
 	i = 0;
+	j = 0;
 	while (s[i])
 	{
+		if (s[i] == '-' || s[i] == '+')
+			j++;
+		if (j > 1)
+		{
+			write(2, "Error\n", 6);
+			exit(1);
+		}
 		if (!(s[i] >= '0' && s[i] <= '9') && (s[i] != '-' && s[i] != '+'))
 			return (1);
 		i++;

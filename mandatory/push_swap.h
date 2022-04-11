@@ -6,7 +6,7 @@
 /*   By: olakhdar <olakhdar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 18:36:29 by olakhdar          #+#    #+#             */
-/*   Updated: 2022/04/08 21:16:41 by olakhdar         ###   ########.fr       */
+/*   Updated: 2022/04/10 17:00:35 by olakhdar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	createstack1(t_list **lst, int argc, char **argv);
 void	createstack2(t_list **lst, int argc, char **argv, int *tab);
 int		check_sort(t_list *a);
 int		check(t_list **a);
-int		ft_isalpha(char *s);
+int		ft_ischar(char *s);
 void	sorttab(int *tab, int size);
 int		check_sort(t_list *a);
 int		checktab(int *tab, int argc);

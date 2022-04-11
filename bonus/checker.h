@@ -6,7 +6,7 @@
 /*   By: olakhdar <olakhdar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/05 20:43:48 by olakhdar          #+#    #+#             */
-/*   Updated: 2022/04/08 21:46:34 by olakhdar         ###   ########.fr       */
+/*   Updated: 2022/04/10 17:02:58 by olakhdar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int		ft_strcmp(char *s1, char *s2);
 char	*corp(char *str);
 long	ft_atoi(const char *str);
 void	createstack(t_list **lst, int argc, char **argv);
-int		ft_isalpha(char *s);
+int		ft_ischar(char *s);
 char	*get_next_line(int fd);
 char	*ft_substr(char *s, int start, int len);
 char	*ft_strjoin(char *s1, char *s2);
@@ -55,7 +55,6 @@ int		ft_strchr(char *s, char c);
 int		check_sort(t_list *a);
 void	checker(t_list **a, t_list **b, char *s);
 int		*createtab(char **argv, int argc);
-void	checksorted(int *tab, int argc);
-int		checktab(int *tab, int argc);
+void	checkerrors(char **argv, int argc);
 
 #endif

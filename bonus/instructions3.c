@@ -6,7 +6,7 @@
 /*   By: olakhdar <olakhdar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 12:10:08 by olakhdar          #+#    #+#             */
-/*   Updated: 2022/04/09 00:56:36 by olakhdar         ###   ########.fr       */
+/*   Updated: 2022/04/10 17:20:20 by olakhdar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,18 @@ void	rrr(t_list **a, t_list **b)
 
 void	pa(t_list **a, t_list **b)
 {
-	push(a, (*b)->var);
-	pop(b);
+	if (*b)
+	{
+		push(a, (*b)->var);
+		pop(b);
+	}
 }
 
 void	pb(t_list **a, t_list **b)
 {
-	push(b, (*a)->var);
-	pop(a);
+	if (*a)
+	{
+		push(b, (*a)->var);
+		pop(a);
+	}
 }

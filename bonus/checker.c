@@ -6,39 +6,11 @@
 /*   By: olakhdar <olakhdar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 15:38:26 by olakhdar          #+#    #+#             */
-/*   Updated: 2022/04/09 01:04:21 by olakhdar         ###   ########.fr       */
+/*   Updated: 2022/04/10 17:20:46 by olakhdar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
-
-void	checkerrors(char **argv, int argc)
-{
-	int	i;
-	int	j;
-	int	*tab;
-
-	i = 0;
-	j = 1;
-	tab = createtab(argv, argc);
-	while (i < argc - 1)
-	{
-		j = i + 1;
-		while (j < argc - 1)
-		{
-			if (tab[i] == tab[j])
-			{
-				write(2, "Error\n", 6);
-				exit(1);
-			}
-			j++;
-		}
-		i++;
-	}
-	if (argc > 2)
-		checksorted(tab, argc);
-	free(tab);
-}
 
 char	*corp(char *str)
 {
@@ -63,6 +35,12 @@ int	ft_strcmp(char *s1, char *s2)
 		i++;
 	}
 	return (1);
+}
+
+void	writeerror(void)
+{
+	write(2, "Error\n", 6);
+	exit(1);
 }
 
 void	checker(t_list **a, t_list **b, char *s)
@@ -90,7 +68,7 @@ void	checker(t_list **a, t_list **b, char *s)
 	else if (ft_strcmp(s, "pb\n") == 1)
 		pb(a, b);
 	else
-		write(2, "Error\n", 6);
+		writeerror();
 }
 
 int	main(int argc, char **argv)
@@ -115,6 +93,6 @@ int	main(int argc, char **argv)
 	if ((check_sort(a) == 1) && !b)
 		write(1, "OK\n", 3);
 	else
-		write(1, "ko\n", 3);
+		write(1, "KO\n", 3);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: olakhdar <olakhdar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 19:30:15 by olakhdar          #+#    #+#             */
-/*   Updated: 2022/04/08 15:41:45 by olakhdar         ###   ########.fr       */
+/*   Updated: 2022/04/10 17:01:00 by olakhdar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	*createtab(char **argv, int argc)
 	tab = malloc(sizeof(int) * (argc - 1));
 	while (j < argc)
 	{
-		if (ft_isalpha(argv[j]) == 1)
+		if (ft_ischar(argv[j]) == 1)
 		{
 			write(2, "Error\n", 6);
 			exit(1);
